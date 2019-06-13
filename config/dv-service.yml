@@ -3,8 +3,16 @@ server:
 spring:
   application:
     name: dv-service
+  cloud:
+    bus:
+      refresh:
+        enabled: true
+  kafka:
+    bootstrap-servers:
+    - 120.78.6.54:5220
+    - 120.78.6.54:5221
 management:
   endpoints:
     web:
       exposure:
-        include: refresh,health,info
+        include: '*'
